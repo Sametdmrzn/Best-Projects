@@ -1,7 +1,7 @@
 body {
     background-color: black;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-family: sans-serif;
 }
 
@@ -14,13 +14,14 @@ body {
 
 .navbar {
     display: flex;
-    width: 1110px;
+    width: 100%;
     height: 70px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
     background-color: #1B1B1B;
     border-radius: 0 0 15px 15px;
+    padding: 0 20px;
 }
 
 .navbar a {
@@ -28,19 +29,51 @@ body {
     color: #9C9C9C;
     font-family: 'IBM Plex Mono';
     font-size: 14px;
-    font: 400;
-
+    font-weight: 400;
 }
 
 .leftside,
 .rightside {
     display: flex;
     gap: 70px;
-    text-align: start;
-    text-decoration: none;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.rightside.social {
-    gap: 25px;
+/* Hamburger butonu başlangıçta gizli */
+.menuToggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Mobil için */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        align-items: flex-start;
+    }
+
+    .leftside,
+    .rightside {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        display: none;
+        /* Başlangıçta gizli */
+    }
+
+    .navbar.active .leftside,
+    .navbar.active .rightside {
+        display: flex;
+        /* active class ile görünür olur */
+    }
+
+    .menuToggle {
+        display: block;
+    }
 }
