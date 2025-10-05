@@ -66,6 +66,10 @@ body {
         display: none;
     }
 
+    .navbar.active {
+        padding: 20px;
+    }
+
     .navbar.active .leftside,
     .navbar.active .rightside {
         display: flex;
